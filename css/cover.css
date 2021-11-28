@@ -148,7 +148,7 @@ body {
 
 .cover-heading {
   margin-top: 7.5rem;
-  color: #303030;
+  color: #fefefe;
   font-family: NanumMyeongjo-b;
 }
 
@@ -169,6 +169,11 @@ header {
   .nav-masthead {
     float: right;
   }
+}
+
+.title-message {
+  color: #fefefe;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 1)
 }
 
 

@@ -157,7 +157,7 @@ body {
 }
 
 header {
-  background-image: url("../img/headert.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/headert.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -173,7 +173,8 @@ header {
 
 .title-message {
   color: #fefefe;
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 1)
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 10);
+  font-weight: bold;
 }
 
 
@@ -191,13 +192,15 @@ header {
   background-color: #fefefe;
   font-family: NanumMyeongjo-r;
   line-height: 2em;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4e81d4;
 }
 
 .section1-sub {
   font-family: NanumMyeongjo-b;
   line-height: 2.1em;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
 }
 
 .section1-sub2 {

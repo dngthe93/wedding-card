@@ -477,3 +477,28 @@ header {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+.copy-toast {
+  opacity: 0;
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX( -50% );
+  border-radius: 5px;
+  padding: 1em;
+  z-index: 99999;
+  background-color: #f9f9f9;
+  color: #303030;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn-copy {
+  display: block;
+  background-color: #dddddd;
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  cursor:pointer;
+}

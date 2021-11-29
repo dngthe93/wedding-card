@@ -64,9 +64,30 @@
 
             $("#d-day").html(result);
         });
+
+        function toast_show_hide(show) {
+            document.getElementById("copy-toast").animate([{opacity: show ? "1" : "0"}], { duration: 500, fill: "forwards" });
+        }
+        function toast_show() {
+            toast_show_hide(true);
+            setTimeout(function() { toast_show_hide(false); }, 2000);
+        }
+        function copy(val, id) {
+            p = document.getElementById(id);
+            const t = document.createElement("textarea");
+            p.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            p.removeChild(t);
+            if (navigator.clipboard)
+                navigator.clipboard.writeText(val);
+            toast_show();
+        }
     </script>
 </head>
 <body class="text-center">
+<div id="copy-toast" class="copy-toast">복사되었습니다</div>
 <div class="top-div">
     <header class="inner cover cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <div class="wow fadeIn" style="display: flex; flex: 2 0 auto; align-items: center; justify-content: center; border-style: solid solid none">
@@ -378,14 +399,14 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body section7-modal section7-modal-content flex-column" style="display: flex; flex-direction: column;">
+                        <div class="modal-body section7-modal section7-modal-content flex-column" style="display: flex; flex-direction: column; padding: 0rem 1rem;">
                             <div class="modal-body section7-modal section7-modal-content modal-header" style="display: flex; flex-direction: column; align-items: stretch;">
                                 <div style="display: flex; flex-direction: column; align-items: stretch; text-align: left;">
                                     <div style="text-align: left; margin-bottom: 1em">혼주 계좌</div>
                                     <div style="text-align: left; font-size: 1rem">하나은행&nbsp;&nbsp;&nbsp;(예금주: 김성수)</div>
                                     <div style="font-size: 1rem; display: flex; justify-content: space-between;">
                                         <div>010-955907-80707</div>
-                                        <a style="display: block; background-color: #dddddd; border-radius: 5px; width: 30%; text-align: center; font-size: 0.9rem;">복사하기</a>
+                                        <span class="btn-copy" onclick="copy('01095590780707', 'groom')">복사하기</span>
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +416,7 @@
                                     <div style="text-align: left; font-size: 1rem">하나은행&nbsp;&nbsp;&nbsp;(예금주: 김혜숙)</div>
                                     <div style="font-size: 1rem; display: flex; justify-content: space-between;">
                                         <div>010-955907-80707</div>
-                                        <a style="display: block; background-color: #dddddd; border-radius: 5px; width: 30%; text-align: center; font-size: 0.9rem;">복사하기</a>
+                                        <span class="btn-copy" onclick="copy()">복사하기</span>
                                     </div>
                                 </div>
                             </div>
@@ -405,7 +426,7 @@
                                     <div style="text-align: left; font-size: 1rem">하나은행&nbsp;&nbsp;&nbsp;(예금주: 김동혁)</div>
                                     <div style="font-size: 1rem; display: flex; justify-content: space-between;">
                                         <div>010-955907-80707</div>
-                                        <a style="display: block; background-color: #dddddd; border-radius: 5px; width: 30%; text-align: center; font-size: 0.9rem;">복사하기</a>
+                                        <span class="btn-copy" onclick="copy()">복사하기</span>
                                     </div>
                                 </div>
                             </div>
@@ -430,14 +451,14 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body section7-modal section7-modal-content flex-column" style="display: flex; flex-direction: column;">
+                        <div class="modal-body section7-modal section7-modal-content flex-column" style="display: flex; flex-direction: column; padding: 0rem 1rem;">
                             <div class="modal-body section7-modal section7-modal-content modal-header" style="display: flex; flex-direction: column; align-items: stretch;">
                                 <div style="display: flex; flex-direction: column; align-items: stretch; text-align: left;">
                                     <div style="text-align: left; margin-bottom: 1em">혼주 계좌</div>
                                     <div style="text-align: left; font-size: 1rem">하나은행&nbsp;&nbsp;&nbsp;(예금주: 한교성)</div>
                                     <div style="font-size: 1rem; display: flex; justify-content: space-between;">
                                         <div>010-955907-80707</div>
-                                        <a style="display: block; background-color: #dddddd; border-radius: 5px; width: 30%; text-align: center; font-size: 0.9rem;">복사하기</a>
+                                        <span class="btn-copy" onclick="copy()">복사하기</span>
                                     </div>
                                 </div>
                             </div>
@@ -447,7 +468,7 @@
                                     <div style="text-align: left; font-size: 1rem">하나은행&nbsp;&nbsp;&nbsp;(예금주: 박은화)</div>
                                     <div style="font-size: 1rem; display: flex; justify-content: space-between;">
                                         <div>010-955907-80707</div>
-                                        <a style="display: block; background-color: #dddddd; border-radius: 5px; width: 30%; text-align: center; font-size: 0.9rem;">복사하기</a>
+                                        <span class="btn-copy" onclick="copy()">복사하기</span>
                                     </div>
                                 </div>
                             </div>
@@ -457,7 +478,7 @@
                                     <div style="text-align: left; font-size: 1rem">하나은행&nbsp;&nbsp;&nbsp;(예금주: 한승연)</div>
                                     <div style="font-size: 1rem; display: flex; justify-content: space-between;">
                                         <div>010-955907-80707</div>
-                                        <a style="display: block; background-color: #dddddd; border-radius: 5px; width: 30%; text-align: center; font-size: 0.9rem;">복사하기</a>
+                                        <span class="btn-copy" onclick="copy()">복사하기</span>
                                     </div>
                                 </div>
                             </div>
